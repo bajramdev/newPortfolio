@@ -9,8 +9,8 @@ class MyDocument extends Document {
     render() {
         return (
             <Html>
+                <title>Create Next App</title>
                 <Head>
-                    <title>Create Next App</title>
                     <link rel="icon" href="/favicon.ico" />
                 </Head>                <body>
                 <Main />
