@@ -2,27 +2,35 @@ import React from 'react';
 
 
 // posts will be populated at build time by getStaticProps()
-function Header({ date }) {
-    return (
-        <h1>  time is {date} </h1>
-    )
-}
+export default class Header extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {date: new Date()};
+    }
 
-// This function gets called at build time on server-side.
-// It won't be called on client-side, so you can even do
-// direct database queries. See the "Technical details" section.
-export async function getStaticProps() {
-    // Call an external API endpoint to get posts.
-    // You can use any data fetching library
-    let date =  new Date()
+    componentDidMount() {
+        this.timerID = setInterval(
+            () => this.tick(),
+            1000
+        );
+    }
 
-    // By returning { props: posts }, the Blog component
-    // will receive `posts` as a prop at build time
-    return {
-        props: {
-            date,
-        },
+    componentWillUnmount() {
+        clearInterval(this.timerID);
+    }
+
+    tick() {
+        this.setState({
+            date: new Date()
+        });
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>Hello, world!</h1>
+                <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+            </div>
+        );
     }
 }
-
-export default Header;
