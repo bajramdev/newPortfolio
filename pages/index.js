@@ -2,7 +2,9 @@ import styles from '../styles/Home.module.css'
 import  Head  from "next/head";
 
 export default function Home() {
-  return (
+    let time = new Date().toLocaleString();
+
+    return (
       <div className={styles.container}>
       <Head>
         <title>Bajram Gerbeshi • Portfolio</title>
@@ -13,6 +15,10 @@ export default function Home() {
         </h1>
           <p>20 år gammal software developer och student på mau
               från Trelleborg.</p>
+          <p className="App-clock">
+              The time is {time}.
+          </p>
+
       </main>
     </div>
   )

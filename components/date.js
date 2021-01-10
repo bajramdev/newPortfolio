@@ -1,8 +1,8 @@
-class Date extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {date: new Date()};
-    }
+import React from 'react'
+
+
+class date extends React.Component {
+
 
     componentDidMount() {
         this.timerID = setInterval(
@@ -21,14 +21,17 @@ class Date extends React.Component {
         });
     }
 
+
     render() {
-        return (
-            <div>
-                <h1>Hello, world!</h1>
-                <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
-            </div>
-        );
+
+
+    return(
+
+        <p className="App-clock">
+            The time is
+        </p>
+    )
     }
 }
 
-export default Date
+export default Date;
