@@ -40,6 +40,7 @@ async function a()  {
     }
     console.log("aw shit" , headers1.Authorization)
     return headers1;
+
 }
 
 async function getCurrentlyPLaying(){
