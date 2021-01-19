@@ -16,7 +16,7 @@ export default function Home({posts , results: song}) {
       <html lang="en" >
       <Head>
         <title>Bajram Gerbeshi • Portfolio</title>
-          <link rel="icon" href="/favicon.ico"npm/>
+          <link rel="icon" href="/favicon.ico"/>
       </Head>
       <body className="bg-black text-white" >
 
@@ -29,9 +29,9 @@ export default function Home({posts , results: song}) {
                      Hem
                   </a>
                   </Link>
-                  <Link href="/project" >
+                  <Link href="/projekt" >
                   <a className="focus:outline-none mr-10 transition duration-300 ease-in-out hover:text-indigo-200" >
-                      Projects
+                      Projekt
                   </a>
                   </Link>
                   <div className="ml-auto">
