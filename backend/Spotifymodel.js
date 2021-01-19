@@ -7,7 +7,7 @@ const info = require('../loginInfo/variables');
 
 //Playwright script to get bearer token which needs to be scraped in order to send get request to spotify's API
 const ayncExample = async () => {
-    const browser = await chromium.launch({headless: false});
+    const browser = await chromium.launch({headless: true});
     const page = await browser.newPage();
     await page.goto('https://accounts.spotify.com/sv/login?continue=https:%2F%2Fwww.spotify.com%2Fse%2Faccount%2Foverview%2F');
     await page.fill('#login-username', `${info.firstName}`);
