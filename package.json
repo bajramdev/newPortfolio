@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "concurrently next dev && cd backend node Spotifymodel.js",
-    "build": "next build",
+    "build": "concurrently next build && cd backend node Spotifymodel.js",
     "start": "concurrently next start && cd backend node Spotifymodel.js"
   },
   "dependencies": {
