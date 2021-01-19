@@ -2,11 +2,11 @@ import "tailwindcss/tailwind.css"
 import  Head  from "next/head";
 import {useState} from "react"
 import Date from '../components/date.component';
-import Songa from "../song.json";
+import Song from "../song.json";
 import style1 from "../styles/Home.module.css";
 import Link from 'next/link';
 import { motion } from "framer-motion";
-const some = require('../animations/animations');
+const animation = require('../animations/animations');
 
 export default function Home({posts , results: song}) {
 
@@ -39,14 +39,14 @@ export default function Home({posts , results: song}) {
               </nav>
          <div className="h-full md:px-0 px-10">
              <div className="h-full w-full flex flex-col max-w-3xl mx-auto mb-16 sm:px-0">
-        <motion.div className={style1.diva} variants={some.fadeInUp} >
-        <motion.h1 className="text-6xl font-bold" variants={some.fadeInUp} >Bajram</motion.h1>
+        <motion.div className={style1.diva} variants={animation.fadeInUp} >
+        <motion.h1 className="text-6xl font-bold" variants={animation.fadeInUp} >Bajram</motion.h1>
         </motion.div>
-                 <motion.div className={style1.diva} variants={some.fadeInUp} >                  <p className="text-gray-400 max-w-sm mt-2">20 år gammal <span className="font-semibold">software developer</span> och student <br/> på Mau,
+                 <motion.div className={style1.diva} variants={animation.fadeInUp} >                  <p className="text-gray-400 max-w-sm mt-2">20 år gammal <span className="font-semibold">software developer</span> och student <br/> på Mau,
                      från Trelleborg.</p>
               </motion.div>
 
-                 <motion.div className={style1.diva} variants={some.fadeInUp} >                     <div className="grid grid-flow-col w-48 mt-3 text-lg" >
+                 <motion.div className={style1.diva} variants={animation.fadeInUp} >                     <div className="grid grid-flow-col w-48 mt-3 text-lg" >
 
                          <div>
                              <a aria-label="GitHub" className="fill-current focus:outline-none transition duration-300 ease-in-out hover:text-indigo-200" href="https://github.com/bajramdev" rel="noopener" target="_blank" >
@@ -78,7 +78,7 @@ export default function Home({posts , results: song}) {
 
 
 
-              <motion.div className={style1.diva} variants={some.fadeInUp} >
+              <motion.div className={style1.diva} variants={animation.fadeInUp} >
               <div className="grid my-8 gap-2" >
                   <div>
           <Date/>
@@ -93,9 +93,9 @@ export default function Home({posts , results: song}) {
           </div>
               </div>
               </motion.div>
-          <motion.div className={style1.diva} variants={some.fadeInUp}>
+          <motion.div className={style1.diva} variants={animation.fadeInUp}>
               <div>
-                  <motion.div className={style1.diva} variants={some.fadeInUp}>
+                  <motion.div className={style1.diva} variants={animation.fadeInUp}>
                       <a href="https://spotify.com/" rel="noopener" target="_blank" className="focus:outline-none transition duration-300 ease-in-out transform hover:scale-105 p-3 rounded-md border border-gray-800 shadow flex flex-row max-w-sm" >
                           <img src={song.imag} alt="Song cover art" className="w-12 h-12 rounded shadow mr-4 " height={40}/>
                 <div className="my-auto" >
@@ -119,16 +119,18 @@ export default function Home({posts , results: song}) {
   )
 }
 
+//API call to the endpoint of weather website to get useful information regarding
+
 export async function getServerSideProps() {
 
-    const res = await fetch('http://api.openweathermap.org/data/2.5/weather?q=Malmo&appid=73efc87c4798668f966ed4bef13fd0db&units=metric')
-    const posts = await res.json()
+    const res = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=Malmo&appid=${process.env.WEATHER_API_KEY}&units=metric`)
+    const posts = await res.json();
 
     return {
 
         props: {
             posts,
-            results: Songa,
+            results: Song,
 
         },
 

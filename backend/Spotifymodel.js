@@ -1,10 +1,11 @@
 const { chromium } = require('playwright');
 const fetch = require('node-fetch');
 const fs = require('fs');
-const songJ = require ('../song.json');
-let albImg, artist, songName, songPreview, songLength, isPlaying, songAt, tempValue = 0, value = 0;
+let albImg, artist, songName, songPreview, songLength, isPlaying, songAt, value = 0;
 const info = require('../loginInfo/variables');
 
+
+//Playwright script to get bearer token which needs to be scraped in order to send get request to spotify's API
 const ayncExample = async () => {
     const browser = await chromium.launch({headless: false});
     const page = await browser.newPage();
@@ -23,30 +24,22 @@ const ayncExample = async () => {
         page.waitForSelector('#oauth-input')
     ])
     value = await page.$eval('#oauth-input', (el) => el.value);
-    await page.screenshot({ path: `example-${browser}.png` });
-    await console.log("inside f ", value);
     await browser.close();
     return value;
 };
-
-console.log("otuside" , value)
-
-async function a()  {
+async function getToken()  {
 
     const newValue =  await ayncExample();
 
-    setTimeout(a, 3400000); //calls a first then setstimeout of 1 hour for new token
+    setTimeout(getToken, 3400000); //calls a first then setstimeout of 1 hour for new token
     const headers1 = {
         'Authorization' : `Bearer ${newValue}`
     }
-    console.log("aw shit" , headers1.Authorization)
     return headers1;
-
 }
 
 async function getCurrentlyPLaying(){
-
-    a().then((token) => {
+    getToken().then((token) => {
         setInterval(async () => {
             fetch('https://api.spotify.com/v1/me/player/currently-playing', {
                 method: 'GET',
@@ -71,12 +64,9 @@ async function getCurrentlyPLaying(){
                       songcur : songAt,
                       isplay : isPlaying
                     })
-
                     fs.writeFileSync("../song.json", JSON.stringify(ArtistInfo));
-
                 })
                 .catch((err) => console.log("error m: " , err))
         }, 5000);
     })}
-
 getCurrentlyPLaying();
