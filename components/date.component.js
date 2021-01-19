@@ -1,11 +1,18 @@
 import React from 'react';
-
+import styles from '../styles/Home.module.css';
 
 // posts will be populated at build time by getStaticProps()
-export default class Header extends React.Component {
+export default class Date extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {date: new Date()};
+        let today = new Date();
+        let datum = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+
+        this.state = {
+            date: new Date(),
+            currentDate: datum
+
+        };
     }
 
     componentDidMount() {
@@ -21,15 +28,14 @@ export default class Header extends React.Component {
 
     tick() {
         this.setState({
-            date: new Date()
+            date: new Date(),
         });
     }
 
     render() {
         return (
             <div>
-                <h1>Hello, world!</h1>
-                <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+                <p className={styles.pinfo} >{this.state.currentDate} • {this.state.date.toLocaleTimeString()}</p>
             </div>
         );
     }

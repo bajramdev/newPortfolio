@@ -62,16 +62,16 @@ async function getCurrentlyPLaying(){
                     isPlaying = json.is_playing  // boolean
 
                     let ArtistInfo = ({
-                    artist :   artist,
-                      song : songName,
-                    imag :   albImg,
+                       artist :   artist,
+                        song : songName,
+                        imag :   albImg,
                      songpre :  songPreview,
                      songlng :  songLength,
                       songcur : songAt,
                       isplay : isPlaying
                     })
 
-                    fs.writeFileSync("../nextjs-stret/song.json", JSON.stringify(ArtistInfo));
+                    fs.writeFileSync("../song.json", JSON.stringify(ArtistInfo));
 
                 })
                 .catch((err) => console.log("error m: " , err))

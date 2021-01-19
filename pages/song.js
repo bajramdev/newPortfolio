@@ -11,7 +11,6 @@ const Songs = ({ results: query }) => {
     );
 }
 
-
 export async function getServerSideProps(context){
     return {
         props: {

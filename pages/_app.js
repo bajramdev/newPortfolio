@@ -6,9 +6,7 @@ function MyApp({ Component, pageProps, }) {
 
   return (
       <>
-          <Header data={pageProps.time} />
           <Component {...pageProps} />
-          <h1>getServerSideProps</h1>
       </>
   )}
 
