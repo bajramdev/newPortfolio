@@ -11,12 +11,12 @@ const some = require('../animations/animations');
 export default function Home({posts , results: song}) {
 
     const [photos, setPhotos] = useState(posts)
-    const [songs, setSongs] = useState(song)
 
     return (
       <html lang="en" >
       <Head>
         <title>Bajram Gerbeshi • Portfolio</title>
+          <link rel="icon" href="/favicon.ico"npm/>
       </Head>
       <body className="bg-black text-white" >
 
@@ -72,7 +72,6 @@ export default function Home({posts , results: song}) {
                                  </a>
                              </a>
                          </div>
-                         <div></div>
                      </div>
 
                  </motion.div>
@@ -82,20 +81,15 @@ export default function Home({posts , results: song}) {
               <motion.div className={style1.diva} variants={some.fadeInUp} >
               <div className="grid my-8 gap-2" >
                   <div>
-                  <svg width="16" height="16" aria-hidden="true" focusable="false" data-prefix="far" data-icon="clock"
-                       className="inline-block fa-clock fa-w-16 mr-2 " role="img" xmlns="http://www.w3.org/2000/svg"
-                       viewBox="0 0 512 512">
-                      <path fill="currentColor"
-                            d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/>
-                  </svg>
           <Date/>
                   </div>
-          <div className="fade-in" >
+          <div>
           <p >
               {photos.weather.map((post) => (
-                  <p> It's currently <span className="font-bold" >{Math.round(photos.main.temp_min * 10) / 10} °C </span>  <span className="text-xs" >({post.description})</span> in <a href="https://openweathermap.org/city/2692969" rel="noopener" target="_blank" className="font-bold focus:outline-none transition duration-300 ease-in-out hover:text-indigo-200" >Malmö.</a></p>
+                  <p> Det är för tillfället <span className="font-bold" >{Math.round(photos.main.temp_min * 10) / 10} °C </span>  <span className="text-xs" >({post.description})</span> i <a href="https://openweathermap.org/city/2692969" rel="noopener" target="_blank" className="font-bold focus:outline-none transition duration-300 ease-in-out hover:text-indigo-200" >Malmö.</a></p>
               ))}
           </p>
+
           </div>
               </div>
               </motion.div>

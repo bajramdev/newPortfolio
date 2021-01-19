@@ -9,7 +9,7 @@ export default class DateComponent extends React.Component {
         let date = today.getDate();
         let year = today.getFullYear();
         let monthNumber = (new Date().getMonth()+1);
-        let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        let monthNames = ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"];
         let monthName = monthNames[monthNumber - 1];
 
 

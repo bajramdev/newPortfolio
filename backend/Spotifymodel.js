@@ -3,19 +3,20 @@ const fetch = require('node-fetch');
 const fs = require('fs');
 const songJ = require ('../song.json');
 let albImg, artist, songName, songPreview, songLength, isPlaying, songAt, tempValue = 0, value = 0;
+const info = require('../loginInfo/variables');
 
 const ayncExample = async () => {
-    const browser = await chromium.launch({headless: true});
+    const browser = await chromium.launch({headless: false});
     const page = await browser.newPage();
     await page.goto('https://accounts.spotify.com/sv/login?continue=https:%2F%2Fwww.spotify.com%2Fse%2Faccount%2Foverview%2F');
-    await page.fill('#login-username', "bbajrm");
-    await page.fill('#login-password', "xJawz123");
+    await page.fill('#login-username', `${info.firstName}`);
+    await page.fill('#login-password', `${info.password}`);
     await page.click('#login-button');
     await page.goto('https://developer.spotify.com/console/get-users-currently-playing-track/?market=ES&additional_types=');
     await page.click('#fill-sample-data');
     await page.click('button:text("Get Token")');
     await page.click('#oauthRequestToken');
-    await page.fill('#login-password', "xJawz123");
+    await page.fill('#login-password', `${info.password}`);
     await page.press('#login-button', 'Enter');
 //        await page.check('scope-user-read-currently-playing');
     await Promise.all([
