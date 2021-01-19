@@ -13,7 +13,7 @@ a
 github / linkedin / email with svg
 
 div
-svg and date • time (local time)
+svg and time • time (local time)
 
 div
 svg det är för tillfället emoji grader (kondition) i Malmö

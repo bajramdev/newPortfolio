@@ -32,3 +32,10 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# sensetive information
+.env
+
+loginInfo
+
+loginInfo/variables.js
