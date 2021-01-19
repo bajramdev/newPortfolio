@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "concurrently next dev && cd backend node Spotifymodel.js",
     "build": "next build",
-    "start": "next start"
+    "start": "concurrently next start && cd backend node Spotifymodel.js"
   },
   "dependencies": {
     "concurrently": "^5.3.0",
