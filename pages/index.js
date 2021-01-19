@@ -73,11 +73,7 @@ export default function Home({posts , results: song}) {
                              </a>
                          </div>
                      </div>
-
                  </motion.div>
-
-
-
               <motion.div className={style1.diva} variants={animation.fadeInUp} >
               <div className="grid my-8 gap-2" >
                   <div>
@@ -86,7 +82,7 @@ export default function Home({posts , results: song}) {
           <div>
           <p>
               {photos.weather.map((post) => (
-                  <p> Det är för tillfället <span className="font-bold" >{Math.round(photos.main.temp_min * 10) / 10} °C </span>  <span className="text-xs" >({post.description})</span> i <a href="https://openweathermap.org/city/2692969" rel="noopener" target="_blank" className="font-bold focus:outline-none transition duration-300 ease-in-out hover:text-indigo-200" >Malmö.</a></p>
+                  <p key={post.id} > Det är för tillfället <span className="font-bold" >{Math.round(photos.main.temp_min * 10) / 10} °C </span>  <span className="text-xs" >({post.description})</span> i <a href="https://openweathermap.org/city/2692969" rel="noopener" target="_blank" className="font-bold focus:outline-none transition duration-300 ease-in-out hover:text-indigo-200" >Malmö.</a></p>
               ))}
           </p>
 
