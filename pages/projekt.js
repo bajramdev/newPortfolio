@@ -19,7 +19,7 @@ export default function Home({posts , results: song}) {
         </Head>
         <body className="bg-black text-white" >
 
-        <motion.div id="__next" initial="initial" animate="animate" >
+        <motion.div id="__next" initial="initial" animate="animate">
 
             <div className="flex flex-col min-h-screen">
                 <nav className="w-full flex justify-start items-center mx-auto max-w-4xl px-8 my-20" >
@@ -28,9 +28,9 @@ export default function Home({posts , results: song}) {
                             Hem
                         </a>
                     </Link>
-                    <Link href="/project" >
+                    <Link href="/projekt" >
                         <a className="focus:outline-none mr-10 transition duration-300 ease-in-out hover:text-indigo-200" >
-                            Projects
+                            Projekt
                         </a>
                     </Link>
                     <motion.div className={style1.div2} variants={some.fadeInUp} >
