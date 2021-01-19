@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-import Header from '../components/Header';
+import Header from '../components/date.component';
 import App from 'next/app';
 
 function MyApp({ Component, pageProps, }) {

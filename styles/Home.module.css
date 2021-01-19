@@ -3,3 +3,8 @@ transition: opacity 400ms , transform 400ms;
 transform: none;
 opacity: 1;
 }
+
+.div2 {
+    position:fixed;
+    z-index:9999
+}

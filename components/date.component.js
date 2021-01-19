@@ -2,16 +2,22 @@ import React from 'react';
 import styles from '../styles/Home.module.css';
 
 // posts will be populated at build time by getStaticProps()
-export default class Date extends React.Component {
+export default class DateComponent extends React.Component {
     constructor(props) {
         super(props);
         let today = new Date();
-        let datum = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        let date = today.getDate();
+        let year = today.getFullYear();
+        let monthNumber = (new Date().getMonth()+1);
+        let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        let monthName = monthNames[monthNumber - 1];
+
 
         this.state = {
             date: new Date(),
-            currentDate: datum
-
+            currentMonth: monthName,
+            currentDate : date,
+            currentYear : year
         };
     }
 
@@ -34,9 +40,7 @@ export default class Date extends React.Component {
 
     render() {
         return (
-            <div>
-                <p className={styles.pinfo} >{this.state.currentDate} • {this.state.date.toLocaleTimeString()}</p>
-            </div>
+                <> {this.state.currentDate} {this.state.currentMonth} {this.state.currentYear} • {this.state.date.toLocaleTimeString()}</>
         );
     }
 }
