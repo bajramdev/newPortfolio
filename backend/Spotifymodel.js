@@ -2,7 +2,7 @@ const { chromium } = require('playwright');
 const fetch = require('node-fetch');
 const fs = require('fs');
 let albImg, artist, songName, songPreview, songLength, isPlaying, songAt, value = 0;
-const info = require('./loginInfo/variables');
+const info = require('../loginInfo/variables');
 
 
 //Playwright script to get bearer token which needs to be scraped in order to send get request to spotify's API
