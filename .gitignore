@@ -36,7 +36,3 @@ yarn-error.log*
 # sensetive information
 
 .env
-
-loginInfo
-
-loginInfo/variables.js
