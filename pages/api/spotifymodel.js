@@ -1,7 +1,7 @@
 const { chromium } = require('playwright');
 const fetch = require('node-fetch');
 const fs = require('fs');
-let albImg, artist, songName, songPreview, songLength, isPlaying, songAt, ArtistInfo,value = 0;
+let albImg, songName, ArtistInfo ,value = 0;
 require('dotenv').config({path:__dirname+'/./../../.env'})
 const firstname = process.env.USERNAME;
 const password = process.env.PASSWORD;
@@ -39,7 +39,6 @@ async function getToken()  {
     }
     return headers1;
 }
-
     async function getCurrentlyPLaying() {
         getToken().then((token) => {
             setInterval(async () => {
@@ -49,25 +48,14 @@ async function getToken()  {
                 })
                     .then(res => res.json())
                     .then((json) => {
-                        artist = json.item.album.artists[0].name
                         songName = json.item.name
                         albImg = json.item.album.images[2].url
-                        songPreview = json.item.preview_url // 30 seconds of the song
-                        songLength = json.item.duration_ms
-                        songAt = json.progress_ms
-                        isPlaying = json.is_playing  // boolean
 
                         ArtistInfo = ({
-                            artist: artist,
                             song: songName,
                             imag: albImg,
-                            songpre: songPreview,
-                            songlng: songLength,
-                            songcur: songAt,
-                            isplay: isPlaying
                         })
-                        fs.writeFileSync("../song.json", JSON.stringify(ArtistInfo));
-
+                        fs.writeFileSync("./song.json", JSON.stringify(ArtistInfo));
                         return JSON.stringify(ArtistInfo);
                     })
                     .catch((err) => console.log("error m: ", err))
@@ -75,7 +63,8 @@ async function getToken()  {
         })
     }
 
-
 getCurrentlyPLaying();
 
-
+export default async (req, res) => {
+    res.status(200).json(fs.readFileSync('./song.json'));
+}

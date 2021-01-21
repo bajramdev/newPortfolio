@@ -2,7 +2,7 @@ import "tailwindcss/tailwind.css"
 import  Head  from "next/head";
 import {useState} from "react"
 import Date from '../components/date.component';
-import Song from "../song.json";
+import Song from "./song.json";
 import style1 from "../styles/Home.module.css";
 import Link from 'next/link';
 import { motion } from "framer-motion";
@@ -114,14 +114,12 @@ export default function Home({posts , results: song , posta}) {
     </html>
   )
 }
-
 //API call to the endpoint of weather website to get useful information regarding
-
 export async function getServerSideProps() {
 
     const res = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=Malmo&appid=73efc87c4798668f966ed4bef13fd0db&units=metric`)
     const posts = await res.json();
-    const res2 = await fetch('http://localhost:3000/api/Spotifymodel');
+    const res2 = await fetch('http://localhost:3000/api/spotifymodel');
     const posta = await res2.json();
 
     return {
