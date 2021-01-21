@@ -2,7 +2,7 @@ const { chromium } = require('playwright');
 const fetch = require('node-fetch');
 const fs = require('fs');
 let albImg, artist, songName, songPreview, songLength, isPlaying, songAt, ArtistInfo,value = 0;
-require('dotenv').config({path: '/Users/bajramgerbeshi/WebstormProjects/untitled4/newPortfolio/.env'})
+require('dotenv').config({path:__dirname+'/./../../.env'})
 const firstname = process.env.USERNAME;
 const password = process.env.PASSWORD;
 
