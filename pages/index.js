@@ -8,6 +8,11 @@ import Link from 'next/link';
 import { motion } from "framer-motion";
 const animation = require('../animations/animations');
 
+let baseUrl = 'http://localhost:3000'
+if(process.env.Vercel_URL) {
+    baseUrl = process.env.Vercel_URL === 'https://something-else.now.sh'? 'https://exmaple.com': process.env.Vercel_URL
+}
+
 export default function Home({posts , results: song , posta}) {
 
     const [photos, setPhotos] = useState(posts)
@@ -119,7 +124,7 @@ export async function getServerSideProps() {
 
     const res = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=Malmo&appid=73efc87c4798668f966ed4bef13fd0db&units=metric`)
     const posts = await res.json();
-    const res2 = await fetch('http://localhost:3000/api/spotifymodel');
+    const res2 = await fetch(`${baseUrl}/api/spotifymodel`);
     const posta = await res2.json();
 
     return {
