@@ -2,7 +2,7 @@ import "tailwindcss/tailwind.css"
 import  Head  from "next/head";
 import {useState} from "react"
 import Date from '../components/date.component';
-import Song from "./song.json";
+import Song from "./api/song.json";
 import style1 from "../styles/Home.module.css";
 import Link from 'next/link';
 import { motion } from "framer-motion";

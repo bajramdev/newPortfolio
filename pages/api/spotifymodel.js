@@ -55,7 +55,7 @@ async function getToken()  {
                             song: songName,
                             imag: albImg,
                         })
-                        fs.writeFileSync("./song.json", JSON.stringify(ArtistInfo));
+                        fs.writeFileSync("song.json", JSON.stringify(ArtistInfo));
                         return JSON.stringify(ArtistInfo);
                     })
                     .catch((err) => console.log("error m: ", err))
@@ -66,5 +66,5 @@ async function getToken()  {
 getCurrentlyPLaying();
 
 export default async (req, res) => {
-    res.status(200).json(fs.readFileSync('./song.json'));
+    res.status(200).json(fs.readFileSync('song.json'));
 }
