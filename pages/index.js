@@ -10,7 +10,7 @@ const animation = require('../animations/animations');
 
 let baseUrl = 'http://localhost:3000'
 if(process.env.Vercel_URL) {
-    baseUrl = process.env.Vercel_URL === 'https://something-else.now.sh'? 'https://exmaple.com': process.env.Vercel_URL
+    baseUrl = process.env.Vercel_URL === 'https://portfolio-iav7gmng0.vercel.app'? 'http://bajram.fyi': process.env.Vercel_URL
 }
 
 export default function Home({posts , results: song , posta}) {
