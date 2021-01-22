@@ -59,7 +59,7 @@ async function getToken()  {
                         return JSON.stringify(ArtistInfo);
                     })
                     .catch((err) => console.log("error m: ", err))
-            }, 5000);
+            }, 60000);
         })
     }
 
