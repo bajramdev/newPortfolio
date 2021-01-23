@@ -66,5 +66,5 @@ async function getToken()  {
 getCurrentlyPLaying();
 
 export default async (req, res) => {
-    res.status(200).json(fs.readFileSync('song.json'));
+    res.status(200).json(process.cwd(), 'song.json');
 }
