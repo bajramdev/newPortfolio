@@ -62,5 +62,10 @@ async function getToken()  {
             }, 3000);
         })
     }
+
 getCurrentlyPLaying();
+
+export default async (req,res) => {
+    res.status(200).json(process.cwd(), '../..song.json');
+}
 
