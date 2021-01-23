@@ -55,18 +55,12 @@ async function getToken()  {
                             song: songName,
                             imag: albImg,
                         })
-                        fs.writeFileSync("song.json", JSON.stringify(ArtistInfo));
+                        fs.writeFileSync("../../song.json", JSON.stringify(ArtistInfo));
                         return JSON.stringify(ArtistInfo);
                     })
                     .catch((err) => console.log("error m: ", err))
-            }, 60000);
+            }, 3000);
         })
     }
-
 getCurrentlyPLaying();
 
-export default async (req, res) => {
-    res.statusCode = 200
-    res.setHeader('Content-Type' , 'application/json')
-    res.end(process.cwd(), 'song.json')
-}
