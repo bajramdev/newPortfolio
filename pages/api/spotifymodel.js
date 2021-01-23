@@ -66,5 +66,7 @@ async function getToken()  {
 getCurrentlyPLaying();
 
 export default async (req, res) => {
-    res.status(200).json(process.cwd(), 'song.json');
+    res.statusCode = 200
+    res.setHeader('Content-Type' , 'application/json')
+    res.end(process.cwd(), 'song.json')
 }
