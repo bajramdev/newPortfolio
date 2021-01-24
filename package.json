@@ -10,12 +10,14 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "framer-motion": "^3.2.1",
-    "next": "^10.0.4",
+    "next": "^10.0.5",
     "node-fetch": "^2.6.1",
     "playwright": "^1.8.0",
-    "react": "17.0.1",
+    "react": "^17.0.1",
     "react-dom": "17.0.1",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "swr": "^0.4.0",
+    "use-last-fm": "^0.6.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.1",
