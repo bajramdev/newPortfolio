@@ -82,7 +82,7 @@ export default function Home({posts}) {
           <div>
           <p>
               {photos.weather.map((post) => (
-                  <p key={post.id} > Det är för tillfället <span className="font-bold" >{Math.round(photos.main.temp_min * 10) / 10} °C </span>  <span className="text-xs" >({post.description})</span> i <a href="https://openweathermap.org/city/2692969" rel="noopener" target="_blank" className="font-bold focus:outline-none transition duration-300 ease-in-out hover:text-indigo-200" >Malmö.</a></p>
+                  <p key={post.id} > Det är för tillfället <span className="font-bold" >{Math.trunc(photos.main.temp * 10).toFixed(1) / 10} °C </span>  <span className="text-xs" >({post.description})</span> i <a href="https://openweathermap.org/city/2692969" rel="noopener" target="_blank" className="font-bold focus:outline-none transition duration-300 ease-in-out hover:text-indigo-200" >Malmö.</a></p>
               ))}
           </p>
 
