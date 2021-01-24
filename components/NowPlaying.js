@@ -1,14 +1,17 @@
 import useSWR from 'swr';
+import { motion } from "framer-motion";
+const animation = require('../animations/animations');
 
 import fetcher from '../lib/fetcher';
+import style1 from "../styles/Home.module.css";
 
 export default function NowPlaying() {
     const { data } = useSWR('/api/spotifymodel', fetcher);
 
     return (
-        <div>
-            <div>
-                <div>
+        <motion.div id="__next" initial="initial" animate="animate">
+            <motion.div className={style1.diva} variants={animation.fadeInUp}>
+                <motion.div className={style1.diva} variants={animation.fadeInUp}>
                     <a href="https://spotify.com/" rel="noopener" target="_blank" className="focus:outline-none transition duration-300 ease-in-out transform hover:scale-105 p-3 rounded-md border border-gray-800 shadow flex flex-row max-w-sm" >
                         <img src={data?.response.imag} alt="Song cover art" className="w-12 h-12 rounded shadow mr-4 " height={40}/>
                         <div className="my-auto" >
@@ -18,8 +21,8 @@ export default function NowPlaying() {
                                 Spotify</p>
                         </div>
                     </a>
-                </div>
-            </div>
-        </div>
+                </motion.div>
+            </motion.div>
+        </motion.div>
     );
 }
