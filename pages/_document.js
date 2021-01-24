@@ -12,7 +12,7 @@ class MyDocument extends Document {
                 <title>Create Next App</title>
                 <Head>
                     <link rel="icon" href="/favicon.ico" />
-                </Head>                <body>
+                </Head><body>
                 <Main />
                 <NextScript />
                 </body>
