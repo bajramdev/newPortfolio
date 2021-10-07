@@ -42,7 +42,7 @@ export default function Home({posts}) {
         <motion.div className={style1.diva} variants={animation.fadeInUp} >
         <motion.h1 className="text-6xl font-bold" variants={animation.fadeInUp} >Bajram</motion.h1>
         </motion.div>
-                 <motion.div className={style1.diva} variants={animation.fadeInUp} >                  <p className="text-gray-400 max-w-sm mt-2">20 år gammal <span className="font-semibold">software developer</span> och student <br/> på Mau,
+                 <motion.div className={style1.diva} variants={animation.fadeInUp} >                  <p className="text-gray-400 max-w-sm mt-2">21 år gammal <span className="font-semibold">software developer</span> och student <br/> på Mau,
                      från Trelleborg.</p>
               </motion.div>
 
