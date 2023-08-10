@@ -42,7 +42,7 @@ export default function Home({posts , results: song}) {
 
                         <motion.div className={style1.diva} variants={some.fadeInUp} >
                             <div className="mt-8 grid gap-6" >
-                                <a href="https://kasada.app" rel="noopener" target="_blank" className="focus:outline-none transition duration-300 ease-in-out transform hover:scale-105 flex flex-col sm:flex-row text-center sm:text-left px-8 sm:px-6 py-6 rounded-md border border-gray-800 shadow flex flex-row max-w-2xl">
+                                <a href="https://ecstatic-kare-37323d.netlify.app/" rel="noopener" target="_blank" className="focus:outline-none transition duration-300 ease-in-out transform hover:scale-105 flex flex-col sm:flex-row text-center sm:text-left px-8 sm:px-6 py-6 rounded-md border border-gray-800 shadow flex flex-row max-w-2xl">
                                     <div
                                         className="flex items-center justify-center text-4xl w-full sm:w-1/12 mr-6 mb-4 sm:mb-0">
                                         <svg height={36} width={36} viewBox="0 0 200 196" fill="none" xmlns="http://www.w3.org/2000/svg">
